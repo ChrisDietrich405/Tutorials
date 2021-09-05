@@ -1,4 +1,4 @@
-//beginning of 47
+//beginning of 63
 
 
 import { useState } from "react"
@@ -29,10 +29,16 @@ const expenses = [
 ];
 
 function App() {
+
+  const addExpenseHandler = (expenses) => {
+    console.log("hello")
+    console.log(expenses)
+  }
+
   return (
   <div>
    <NewExpense />
-   <Expenses expenses={expenses} />
+   <Expenses expenses={expenses} onAddExpense={addExpenseHandler} />
   </div>
   )
 }

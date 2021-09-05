@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import "./ExpenseForm.css"
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
     const [enteredTitle, setEnteredTitle] = useState("")
     const [enteredAmount, setEnteredAmount] = useState("")
@@ -28,6 +28,7 @@ const ExpenseForm = () => {
             amount: setEnteredAmount,
             date: new Date(setEnteredDate)
         }
+            props.onSaveExpenseData(expenseData)
             setEnteredTitle("")
             setEnteredAmount("")
             setEnteredDate("")
@@ -49,7 +50,7 @@ const ExpenseForm = () => {
                 <input type="date" value={setEnteredDate} min="2019-1-1" max="2022-12-31" onChange={dateChangeHandler} />
             </div>
             <div className="new-expense__actions">
-                <button type="submit">Add Expense </button>
+                <button type="submit">Add Expense</button>
             </div>
         </div>
     </form>
