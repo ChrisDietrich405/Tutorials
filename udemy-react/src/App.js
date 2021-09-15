@@ -1,4 +1,4 @@
-//beginning of 63
+//beginning of 67
 
 
 import { useState } from "react"
@@ -6,7 +6,7 @@ import { useState } from "react"
 import Expenses from "./components/expenses/Expenses"
 import NewExpense from "./components/new-expense/NewExpense"
 
-const expenses = [
+const DUMMY_EXPENSES = [
   {
 	id: 'e1',
 	title: 'Toilet Paper',
@@ -30,15 +30,18 @@ const expenses = [
 
 function App() {
 
-  const addExpenseHandler = (expenses) => {
-    console.log("hello")
-    console.log(expenses)
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
+
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses]
+    })  
   }
 
   return (
   <div>
-   <NewExpense />
-   <Expenses expenses={expenses} onAddExpense={addExpenseHandler} />
+   <NewExpense onAddExpense={addExpenseHandler} />
+   <Expenses expenses={expenses}  />
   </div>
   )
 }
