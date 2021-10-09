@@ -1,37 +1,33 @@
-# Getting Started with Create React App
+# CG Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is an online cel phone store. 
+This project includes bootstrap and also the useContext React Hook
 
-## Available Scripts
+## How To Run This Project
 
-In the project directory, you can run:
+1. Clone project (in terminal add `git clone https://github.com/ChrisDietrich405/GC.Shop`)
+2. Install dependencies (in terminal run `npm install`)
+3. Run project (in terminal run `npm start`)
 
-### `npm start`
 
-Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Loading Page
 
-### `npm run build`
+![image](https://user-images.githubusercontent.com/70533870/132955620-46ff99b1-8e2b-4eb0-8ea8-7715166fb12e.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Home Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://user-images.githubusercontent.com/70533870/132955522-c32a7d2a-b101-4c76-8502-7e3415edbe7b.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+WishList Page
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![image](https://user-images.githubusercontent.com/70533870/132955662-a5e038bd-86d6-4398-a3f5-e3c54e1fecd2.png)
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
