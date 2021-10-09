@@ -68,17 +68,25 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
+  console.log(sort)
+  const movs = sort ? movements.slice().sort((a, b) => 
+  { console.log(a, b)
+    return a - b
+  }) : movements;
+  
 
-  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+  //sort has a truthy value here (as if it were an if statement)
+
+  //slice will make a copy without referencing the original 
 
   movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
     const html = `
       <div class="movements__row">
-        <div class="movements__type movements__type--${type}">${
-      i + 1
-    } ${type}</div>
+        <div class="movements__type movements__type--${type}"> <!--to create the styling-->
+          ${i + 1} ${type}
+        </div>
         <div class="movements__value">${mov}€</div>
       </div>
     `;
@@ -87,9 +95,9 @@ const displayMovements = function (movements, sort = false) {
   });
 };
 
-const calcDisplayBalance = function (acc) {
-  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${acc.balance}€`;
+const calcDisplayBalance = function (account) { //account will be replaced by the entire object from the customer
+  account.balance = account.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${account.balance}€`;
 };
 
 const calcDisplaySummary = function (acc) {
@@ -106,7 +114,7 @@ const calcDisplaySummary = function (acc) {
   const interest = acc.movements
     .filter(mov => mov > 0)
     .map(deposit => (deposit * acc.interestRate) / 100)
-    .filter((int, i, arr) => {
+    .filter((int) => {
       // console.log(arr);
       return int >= 1;
     })
@@ -118,19 +126,23 @@ const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
       .toLowerCase()
-      .split(' ')
-      .map(name => name[0])
-      .join('');
+      .split(' ')  //split makes an array of strings ["Gabriel"," Davi"]
+      .map(name => name[0])  //it will be an array ["G", "D"]
+      .join(''); "GD"
   });
 };
 createUsernames(accounts);
 
-const updateUI = function (acc) {
+
+const updateUI = function (acc) { //whatever is received as the argument replacing acc will also replace the acc in the 
+  //three bottom functions below
+  console.log(acc)
   // Display movements
   displayMovements(acc.movements);
 
   // Display balance
   calcDisplayBalance(acc);
+
 
   // Display summary
   calcDisplaySummary(acc);
@@ -156,13 +168,18 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = ""
     inputLoginPin.blur()
 
-    displayMovements(currentAccount.movements)
+    displayMovements(currentAccount.movements, false)
     
-    calcDisplayBalance(currentAccount.movements)
+    calcDisplayBalance(currentAccount)
     
     calcDisplaySummary(currentAccount)
   }
 });
+
+
+
+
+
 //////////////////////////////////////////////////////STOP HERE
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
