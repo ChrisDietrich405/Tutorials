@@ -24,6 +24,7 @@ body {
 
 /* LAYOUT */
 main {
+  margin-top: 2rem; 
   position: relative;
   width: 100rem;
   height: 60rem;
