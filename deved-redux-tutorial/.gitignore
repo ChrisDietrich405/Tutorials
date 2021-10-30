@@ -1,15 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/deved-state-management/node_modules
-/deved-state-management/.pnp
-/deved-state-management/.pnp.js
-
-/traversy-context-project/node_modules
-
-/code-15-projects-tab/node_modules
-/code-15-projects-grocery-list/node_modules
-/deved-redux-tutorial/node_modules
+/node_modules
+/.pnp
+.pnp.js
 
 # testing
 /coverage
