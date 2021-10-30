@@ -5,6 +5,8 @@
 /deved-state-management/.pnp
 /deved-state-management/.pnp.js
 
+/traversy-context-project/node_modules
+
 # testing
 /coverage
 
