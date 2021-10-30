@@ -1,0 +1,21 @@
+nav {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    margin-top: 1rem; 
+
+    ul {
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+    }
+
+    li {
+        list-style: none; 
+        margin-right: 20px; 
+    }
+
+    .logo {
+        width: 40px; 
+    }
+}

@@ -1,0 +1,45 @@
+h2 {
+    margin-top: 2rem;
+    text-align: center;   
+}
+
+.section-border {
+    text-align: center; 
+}
+
+.section-border span {
+    background: #32b4b6;
+    width: 60px;
+    height: 4px;
+    display: inline-block;
+    margin: 0 5px;
+}
+.section-border .brand-color-border {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
+
+.section-border span {
+    background: #32B4B6;
+    width: 60px;
+    height: 4px;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.about-us-explanation {
+    margin: 30px auto;
+    width: 85%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;  
+}
+
+.about-us-explanation > div {
+    margin-right: 30px; 
+}
+
+.about-us-pic {
+    height: 400px; 
+}
